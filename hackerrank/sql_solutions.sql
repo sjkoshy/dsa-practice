@@ -21,3 +21,15 @@ select distinct city from station where id % 2 = 0;
 -- Weather Observation Station 6: Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
 
 select distinct city from station where city like 'a%' or city like 'e%' or city like 'i%' or city like 'o%' or city like 'u%'
+
+-- Higher Than 75 Marks: Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+select name from students where marks > 75
+order by right(name, 3), ID asc
+
+-- Weather Observation Station 16: Query the smallest Northern Latitude (LAT_N) from STATION that is greater than 38.7780. Round your answer to 4 decimal places.
+
+select round(lat_n, 4) from station 
+where lat_n > 38.7780 
+order by lat_n asc,
+lat_n limit 1;
