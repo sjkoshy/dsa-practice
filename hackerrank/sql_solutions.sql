@@ -39,3 +39,9 @@ lat_n limit 1;
 ---- The sum of all values in LONG_W rounded to a scale of  decimal places.
 
 select round(sum(lat_n),2), round(sum(long_w),2) from station
+
+-- Weather Observation Station 15: Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than . Round your answer to  decimal places.
+
+ select round(long_w,4) from station where lat_n < 137.2345
+ order by lat_n desc,
+ lat_n limit 1;
